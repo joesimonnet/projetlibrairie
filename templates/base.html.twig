@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Librairie Mot à Mot{% endblock %}</title>
+        
+        <!-- META -->
+        <meta name="description" content="Librairie généraliste indépendante Mot à Mot, 84120 Pertuis : jeunesse, littérature, bande dessinée, essai">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0" /> <!-- VIEWPORT MOBILE -->
+
+        
+        <!-- STYLE SHEETS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css" /> <!-- BULMA -->
+        {#<link rel="stylesheet/less" type="text/css" href="/public/assets/css/styles.css" />   <!-- STYLE.LESS -->#}
+        <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}">
+        
+        <!-- SCRIPTS -->
+        <!-- FONT AWESOME 5.0.6 -->
+        <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+        <!-- LESS -->
+        {#<script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/3.0.2/less.min.js" type="text/javascript"></script>#}
+        {% block stylesheets %}{% endblock %}
+    </head>
+    
+    
+    <body>
+        <h1>TITRE TEST</h1>
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="{{ path('home') }}">
+                    <strong>Mot à Mot</strong>
+                </a>
+            </div>
+            <div class="navbar-menu">
+                <div class="navbar-start">
+                    <a class="navbar-item" href="{{ path('home') }}">Coups de coeur</a>
+                    <a class="navbar-item" href="{{ path('home') }}">Contact</a>
+                    <a class="navbar-item" href="{{ path('home') }}">Administration</a>
+                </div>
+                
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                        <div class="field">
+                            <p class="control">
+                                <a class="button">inscription</a>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="navbar-item">
+                        <div class="field">
+                            <p class="control">
+                                <a class="button is-info" href="{{ path('home') }}">connexion</a>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="navbar-item">
+                        <div class="field">
+                            <p class="control">
+                                <a class="button is-danger" href="{{ path('home') }}">déconnexion</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="search_bar">
+            <input class="search">
+            <a href="#">Avancé</a>
+        </div>
+
+        {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+        
+        
+        
+    <footer>
+        <small>&copy; 2018 - Librairie Mot à Mot - Pertuis</small>
+    </footer>
+    {#<script src="{{ asset('js/app.js') }}"></script>#}
+</body>
+</html>
